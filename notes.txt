@@ -1,0 +1,58 @@
+	{
+		"email": "bigbrother1414@yahoo.com",
+		"password": "wodota"
+	}
+
+//One
+{
+	"name": "Baby Johnson",
+	"price": 150,
+	"description": "Baby Jonhson's!!!",
+	"isActive": false,
+	"createdOn": "4/4/2009"
+}
+
+//Many
+[
+{
+	"name": "Father Johnson",
+	"description": "Father Johnson's!",
+	"price": 120,
+	"isActive": true,
+	"createdOn": "1/1/2009"
+},
+{
+	"name": "Mother Johnson",
+	"description": "Mother Johnson's!",
+	"price": 100,
+	"isActive": true,
+	"createdOn": "2/2/2010"
+}
+]
+
+
+Create a new user
+{
+		"userId": 414,
+		"email": "da@gmail.com",
+		"password":"da",
+		"isAdmin": false
+}
+
+
+
+
+app.get('/products', (req, res) => {
+	console.log(loggedUser)
+	//Pushes all active products so that output returns all products where value of isActive === true
+	for (i of products) {
+		if (i.isActive === true) {
+			activeprod.push(i)
+		}
+	}
+	res.send(activeprod)
+	//Pops all objevcts in activeprod to prevent bugs
+	for(let i = activeprod.length - 1; i >= 0;i--) {
+    activeprod.pop()
+}
+})
